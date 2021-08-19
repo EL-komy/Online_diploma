@@ -1,0 +1,53 @@
+main.o:
+00000000 T main
+
+startup.o:
+
+         U _E_bss
+         U _E_data
+         U _E_text
+         U _S_bss
+         U _S_data
+00000084 W bus_fault
+00000084 T default_handler
+00000000 R g_vector
+00000084 W h_fault_handler
+         U main
+00000084 W nmi_handler
+00000000 T reset_handler
+00000000 b stack_top
+
+
+lab4.elf:
+
+20000400 B _E_bss
+20000000 T _E_data
+00000130 T _E_text
+20000000 B _S_bss
+20000000 T _S_data
+20001400 B _stack_top
+00000124 W bus_fault
+00000124 T default_handler
+00000000 T g_vector
+00000124 W h_fault_handler
+00000014 T main
+00000124 W nmi_handler
+000000a0 T reset_handler
+20000000 b stack_top
+
+lab4.eaxf:
+
+20000400 B _E_bss
+20000000 T _E_data
+00000130 T _E_text
+20000000 B _S_bss
+20000000 T _S_data
+20001400 B _stack_top
+00000124 W bus_fault
+00000124 T default_handler
+00000000 T g_vector
+00000124 W h_fault_handler
+00000014 T main
+00000124 W nmi_handler
+000000a0 T reset_handler
+20000000 b stack_top
