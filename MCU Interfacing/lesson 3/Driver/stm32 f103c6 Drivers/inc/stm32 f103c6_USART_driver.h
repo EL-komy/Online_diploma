@@ -34,7 +34,7 @@ typedef struct{
 	uint8_t USART_MODE;     //Specifies TX/RX Enable/Disable
                            //This parameter must be set based on @Ref USART_MODE_define
 
-	uint8_t BaudRate;       //Specifies communication Baud Rate
+	uint32_t BaudRate;       //Specifies communication Baud Rate
 						  //This parameter must be set based on @Ref USART_BaudRate_define
 
 	uint8_t data_len;      //Specifies number of data bits transmitted or received in a frame
