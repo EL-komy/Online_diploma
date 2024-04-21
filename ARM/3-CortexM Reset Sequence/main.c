@@ -2,7 +2,7 @@
 #include <stdint.h>
 
 #if !defined(__SOFT_FP__) && defined(__ARM_FP)
-  #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+#warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
 #endif
 
 
@@ -21,11 +21,41 @@
 #include "I2C_Slave_EEPROM.h"
 
 
- uint8_t IRQ_Flag = 0;
+uint8_t IRQ_Flag = 0;
+int cpu_IPSR=1;
+
+enum CpuAaccessLevel{
+	privileged,
+	unprivileged
+};
+
+
+void switch_access_level(enum CpuAaccessLevel level )
+{
+	switch (level)
+	{
+	case privileged:
+		__asm("mrs r3,CONTROL \n\t"
+				"lsr r3,r3,#0x1 \n\t"
+				"lsl r3,r3,#0x1 \n\t"
+				"msr CONTROL,r3");
+		break;
+
+	case unprivileged:
+		__asm("mrs r3,CONTROL \n\t"
+				"orr r3,r3,#0x1 \n\t"
+				"msr CONTROL,r3");
+		break;
+	}
+
+
+}
 
 void EXTI9_CALLBACK(void)
 {
 	IRQ_Flag = 1;
+	switch_access_level(privileged);
+
 }
 
 int main(void)
@@ -44,6 +74,9 @@ int main(void)
 
 
 	IRQ_Flag = 1;
+
+	switch_access_level(unprivileged);
+
 
 	while (1)
 	{
