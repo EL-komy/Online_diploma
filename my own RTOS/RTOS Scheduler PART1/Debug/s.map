@@ -1087,18 +1087,17 @@ LOAD c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000008000730                PendSV_Handler
  *fill*         0x000000000800073e        0x2 
  .text.MYRTOS_Create_MainStack
-                0x0000000008000740       0x40 MY_RTOS/Scheduler.o
+                0x0000000008000740       0x3c MY_RTOS/Scheduler.o
                 0x0000000008000740                MYRTOS_Create_MainStack
  .text.IDLE_Task
-                0x0000000008000780        0x8 MY_RTOS/Scheduler.o
-                0x0000000008000780                IDLE_Task
+                0x000000000800077c        0x8 MY_RTOS/Scheduler.o
+                0x000000000800077c                IDLE_Task
  .text.MYRTOS_init
-                0x0000000008000788       0x80 MY_RTOS/Scheduler.o
-                0x0000000008000788                MYRTOS_init
+                0x0000000008000784       0x80 MY_RTOS/Scheduler.o
+                0x0000000008000784                MYRTOS_init
  .text.MYRTOS_Create_stackoftask
-                0x0000000008000808       0x76 MY_RTOS/Scheduler.o
-                0x0000000008000808                MYRTOS_Create_stackoftask
- *fill*         0x000000000800087e        0x2 
+                0x0000000008000804       0x7c MY_RTOS/Scheduler.o
+                0x0000000008000804                MYRTOS_Create_stackoftask
  .text.MYRTOS_Create_Task
                 0x0000000008000880       0x60 MY_RTOS/Scheduler.o
                 0x0000000008000880                MYRTOS_Create_Task
