@@ -1,0 +1,14 @@
+Scheduler.c:43:28:PendSV_Handler	0	static,ignoring_inline_asm
+Scheduler.c:110:6:MYRTOS_Create_MainStack	4	static
+Scheduler.c:119:6:IDLE_Task	4	static,ignoring_inline_asm
+Scheduler.c:130:17:MYRTOS_init	16	static
+Scheduler.c:156:6:MYRTOS_Create_stackoftask	24	static
+Scheduler.c:191:17:MYRTOS_Create_Task	24	static
+Scheduler.c:227:6:bubbleSort	24	static
+Scheduler.c:244:6:MYRTOS_Updata_schad_table	24	static
+Scheduler.c:291:6:decide_whatnext	8	static
+Scheduler.c:313:6:OS_SVC_Service	24	static
+Scheduler.c:345:6:MYRTOS_OS_SVC_Set	16	static,ignoring_inline_asm
+Scheduler.c:362:6:MYRTOS_Activate_Task	16	static
+Scheduler.c:367:6:MYRTOS_Terminate_Task	16	static
+Scheduler.c:375:6:MYRTOS_StartOS	8	static,ignoring_inline_asm
